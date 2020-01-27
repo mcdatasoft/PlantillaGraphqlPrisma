@@ -1,0 +1,35 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "description": "",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "files": [
+    "build/src"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run check",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
+    "prod": "tsc && node ./build/src/index.js",
+    "start": "npx ts-node ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^10.0.3",
+    "gts": "^1.1.2",
+    "prisma2": "^2.0.0-preview020.3",
+    "typescript": "~3.7.0"
+  },
+  "dependencies": {
+    "@prisma/client": "2.0.0-preview020.3",
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
+}

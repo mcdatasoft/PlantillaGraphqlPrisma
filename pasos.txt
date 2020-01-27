@@ -1,0 +1,41 @@
+1-Git: Initialize Repository //crea nuevo master branch logico no fisico en la nueva carpeta del proyecto creada
+2. crear file .gitignore  con el texto  node_modules para no cargar en github las librerias npm instalados
+3. npx gts init  // responder yes  (y)
+4. yarn // para instalar las actualizaciones de internet, parches, y paquetes necesarios
+--------------------------------------------------------------------------------------------------------------
+5. npm run check // para una revision completa del programa
+6. npm run fix // si tenemos algun conflicto o inconsistencia reportada ejecutamos este 
+7. npm run compile // compilamos la transpilacion a codigo js, lo hara hacia la carpeta build
+8. npm run clean // borra los archivos compilados y transpilados
+9. colocar el script para el ambiente de produccion en el que se ejecuta el transpilado .JS->> [ npm run prod ]
+    "prod": "tsc && node ./build/src/index.js"
+10. probar entorno de produccion que transpila en la carpeta ruta destino y ejecuta el codigo transpilado
+    npm run prod
+***************************Ejecutar TypeScript sin transpilar****************************
+***podemos trabajar con los archivos  .ts en dev, ejecutando en desarrollo el app sin transpilar***
+1. npm install ts-node-dev -s // instalar el paquete que trae server node para typescript
+2. colocar el script dev para ejecutar el codigo typescript sin compilar y mostrar cada cambio que se grabe
+    de forma continua hasta que se lance CTRL + C para interrumpir y detener el servicio
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
+3. probar el entorno de desarrollo que ejecuta el fuente iniciando con el fichero indicado en el script
+    npm run dev
+4. "start": "npx ts-node ./src/index.ts" //colocar el script start para ejecutar el codigo typescript sin compilar
+    npm start
+
+    --git hub
+
+    https://github.com/google/gts
+
+    Adds scripts to your package.json:
+check: Lints and checks for formatting problems.[ RUN ]
+fix: Automatically fixes formatting and linting problems (if possible).
+clean: Removes output files.
+compile: Compiles the source code using TypeScript compiler.
+pretest, posttest and prepare: convenience integrations.
+
+
+
+
+
+
+****falta express*************con @types de typescript

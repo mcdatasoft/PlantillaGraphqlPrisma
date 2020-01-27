@@ -1,0 +1,41 @@
+https://github.com/prisma/prisma2/blob/master/docs/getting-started.md
+
+https://photonjs.prisma.io/
+
+https://lift.prisma.io/
+
+
+1. npm install prisma2 --save-dev
+2. npx prisma2 init
+3. npx prisma2 introspect
+4. npm install @prisma/client
+5. {
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "lib": ["esnext"],
+    "strict": true
+  },
+  "include": ["src/**/*"]
+}  //************ tsconfig.json 
+6. npx prisma2 generate
+
+
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+async function main() {
+
+  const users = await prisma.users.findMany({
+    include: {
+      postses: true,
+    }
+  })
+  console.log(JSON.stringify(users))
+}
+
+main()
+This is a simple API call that fetches all the records from the users table. you can run the script with this command:
+
+npx ts-node script.ts
