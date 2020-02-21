@@ -1,0 +1,12 @@
+1. npm install// descarga de paquetes iniciales del proyecto y un npm start para validar prisma con sqlite
+2. npm install graphql-yoga // instalar yoga para crear apis graphql
+3. codificar index.ts
+4. npm start//ejecutamos app
+5. http://localhost:4000  // para ver el playground de yoga
+6. consultar api :   query{info} y pulsar boton procesar
+7. consultar api :   query {
+                            listado{
+                                id, nombre, apellido
+                            }
+}
+
